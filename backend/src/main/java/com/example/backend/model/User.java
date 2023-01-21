@@ -34,7 +34,7 @@ import java.util.Set;
 )
 @Table(name = "TB_USER",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "USER_ID"),
+                @UniqueConstraint(columnNames = "USERNAME"),
                 @UniqueConstraint(columnNames = "EMAIL")
         })
 @Getter
@@ -44,7 +44,7 @@ import java.util.Set;
 @DynamicInsert
 @DynamicUpdate
 @Where(clause = "DELETE_YN = 'N'")
-@SQLDelete(sql = "UPDATE TB_USER SET DELETE_YN = 'Y', DELETE_TIME=TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE UID = ?")
+@SQLDelete(sql = "UPDATE TB_USER SET DELETE_YN = 'Y', DELETE_TIME=TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE ID = ?")
 public class User extends BaseTimeEntity {
 
     @Id
@@ -56,7 +56,7 @@ public class User extends BaseTimeEntity {
 
     @NotBlank
     @Column
-    private String userId;
+    private String username;
 
     @NotBlank
     @Column
@@ -64,7 +64,7 @@ public class User extends BaseTimeEntity {
 
     @NotBlank
     @Column
-    private String userName;
+    private String name;
 
     @NotBlank
     @Column
@@ -95,5 +95,26 @@ public class User extends BaseTimeEntity {
     private Set<Role> role = new HashSet<>();
 
 
+    public User(String username, String password, String name, String email, String birth, String phone, String address, String gender) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+        this.birth = birth;
+        this.phone = phone;
+        this.address = address;
+        this.gender = gender;
+    }
 
+    public User(Long id, String username, String password, String name, String email, String birth, String phone, String address, String gender) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+        this.birth = birth;
+        this.phone = phone;
+        this.address = address;
+        this.gender = gender;
+    }
 }

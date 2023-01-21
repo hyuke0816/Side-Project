@@ -24,9 +24,9 @@ DROP TABLE TB_GOODS CASCADE CONSTRAINTS;
 CREATE TABLE TB_USER
 (
     ID          NUMBER NOT NULL PRIMARY KEY,
-    USER_ID     VARCHAR2(1000),          -- 아이디
+    USERNAME    VARCHAR2(1000),          -- 아이디
     PASSWORD    VARCHAR2(1000),          -- 비밀번호
-    USER_NAME   VARCHAR2(1000),          -- 사용자 이름
+    NAME        VARCHAR2(1000),          -- 사용자 이름
     EMAIL       VARCHAR2(1000),          -- 이메일
     BIRTH       VARCHAR2(1000),          -- 생년월일
     PHONE       VARCHAR2(1000),          -- 휴대폰번호
