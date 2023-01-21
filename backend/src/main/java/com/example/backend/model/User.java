@@ -34,7 +34,7 @@ import java.util.Set;
 )
 @Table(name = "TB_USER",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "USERNAME"),
+                @UniqueConstraint(columnNames = "USER_ID"),
                 @UniqueConstraint(columnNames = "EMAIL")
         })
 @Getter

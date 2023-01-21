@@ -6,11 +6,11 @@
 -- TODO: login 관련 테이블/시퀀스
 DROP SEQUENCE SQ_USER;
 CREATE SEQUENCE SQ_USER START WITH 1 INCREMENT BY 1
-                        MINVALUE 1   MAXVALUE 99999999;
+    MINVALUE 1 MAXVALUE 99999999;
 
 DROP SEQUENCE SQ_ROLE;
 CREATE SEQUENCE SQ_ROLE START WITH 1 INCREMENT BY 1
-                        MINVALUE 1   MAXVALUE 99999999;
+    MINVALUE 1 MAXVALUE 99999999;
 
 DROP SEQUENCE SQ_GOODS;
 CREATE SEQUENCE SQ_GOODS START WITH 1 INCREMENT BY 1;
@@ -24,18 +24,18 @@ DROP TABLE TB_GOODS CASCADE CONSTRAINTS;
 CREATE TABLE TB_USER
 (
     ID          NUMBER NOT NULL PRIMARY KEY,
-    USER_ID     VARCHAR2(1000), -- 아이디
-    PASSWORD    VARCHAR2(1000), -- 비밀번호
-    NAME        VARCHAR2(1000), -- 사용자 이름
-    EMAIL       VARCHAR2(1000), -- 이메일
-    BIRTH       VARCHAR2(1000), -- 생년월일
-    PHONE       VARCHAR2(1000), -- 휴대폰번호
-    ADDRESS     VARCHAR2(1000), -- 주소
-    GENDER      VARCHAR2(1000), -- 성별
+    USER_ID     VARCHAR2(1000),          -- 아이디
+    PASSWORD    VARCHAR2(1000),          -- 비밀번호
+    USER_NAME   VARCHAR2(1000),          -- 사용자 이름
+    EMAIL       VARCHAR2(1000),          -- 이메일
+    BIRTH       VARCHAR2(1000),          -- 생년월일
+    PHONE       VARCHAR2(1000),          -- 휴대폰번호
+    ADDRESS     VARCHAR2(1000),          -- 주소
+    GENDER      VARCHAR2(1000),          -- 성별
     DELETE_YN   VARCHAR2(1) DEFAULT 'N', -- 삭제여부
-    INSERT_TIME VARCHAR2(255), -- 생성시간
-    UPDATE_TIME VARCHAR2(255), -- 수정시간
-    DELETE_TIME VARCHAR2(255) -- 삭제시간
+    INSERT_TIME VARCHAR2(255),           -- 생성시간
+    UPDATE_TIME VARCHAR2(255),           -- 수정시간
+    DELETE_TIME VARCHAR2(255)            -- 삭제시간
 );
 
 
