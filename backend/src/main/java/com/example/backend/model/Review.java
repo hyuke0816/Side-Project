@@ -12,24 +12,23 @@ import javax.persistence.*;
 
 /**
  * packageName : com.example.backend.model
- * fileName : Goods
+ * fileName : Review
  * author : hyuk
- * date : 2023/01/21
+ * date : 2023/01/22
  * description :
  * ===========================================================
  * DATE            AUTHOR             NOTE
  * —————————————————————————————
- * 2023/01/21         hyuk          최초 생성
+ * 2023/01/22         hyuk          최초 생성
  */
-
 @Entity
 @SequenceGenerator(
-        name= "SQ_GOODS_GENERATOR"
-        , sequenceName = "SQ_GOODS"
+        name= "SQ_REVIEW_GENERATOR"
+        , sequenceName = "SQ_REVIEW"
         , initialValue = 1
         , allocationSize = 1
 )
-@Table(name = "TB_GOODS")
+@Table(name = "TB_REVIEW")
 @Getter
 @Setter
 @DynamicInsert
@@ -37,41 +36,25 @@ import javax.persistence.*;
 @NoArgsConstructor
 // TODO: @Where, @SQLDelete 추가, BaseTimeEntity 상속
 @Where(clause = "DELETE_YN = 'N'")
-@SQLDelete(sql="UPDATE TB_GOODS SET DELETE_YN = 'Y', DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE GID = ?")
-public class Goods extends BaseTimeEntity{
+@SQLDelete(sql="UPDATE TB_REVIEW SET DELETE_YN = 'Y', DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE RNO = ?")
+public class Review extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE
-                    ,generator = "SQ_GOODS_GENERATOR"
+            ,generator = "SQ_REVIEW_GENERATOR"
     )
     @Column
-    private Integer gid;
+    private Integer rno;
 
     @Column
-    private String name;
+    private Integer id;
 
     @Column
-    private Integer price;
+    private String title;
 
     @Column
-    private String explanation;
+    private String content;
 
     @Column
-    private String mainPhoto;
-
-    @Column
-    private Integer views;
-
-    @Column
-    private Integer purchase;
-
-    @Column
-    private Integer reviews;
-
-    @Column
-    private String publishDay;
-
-    @Column
-    private String publishYn;
-
+    private Integer grade;
 }
