@@ -10,11 +10,23 @@ VALUES (SQ_ROLE.NEXTVAL, 'ROLE_ADMIN', 'N', TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI
 -- email : admin@admin.com
 -- roles : ROLE_ADMIN
 
--- INSERT INTO TB_USER
--- VALUES (SQ_USER.NEXTVAL, 'admin', '$2a$10$QrX8ZL/Z.VCfw..fuTnN9O2rOngh.JzwXfX.Qjy3CsZ53ZO6oW.o6', '관리자', 'tomato@admin.com',
---          '', '', '', '', 'N',
---         TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'), NULL, NULL);
--- INSERT INTO TB_USER
+-- $2a$10$QrX8ZL/Z.VCfw..fuTnN9O2rOngh.JzwXfX.Qjy3CsZ53ZO6oW.o6
+
+INSERT INTO TB_USER
+VALUES (SQ_USER.NEXTVAL,
+        'admin',
+        '$2a$10$QrX8ZL/Z.VCfw..fuTnN9O2rOngh.JzwXfX.Qjy3CsZ53ZO6oW.o6',
+        '관리자',
+        'admin@admin.com',
+         '',
+         '',
+         '',
+         '',
+         'N',
+         TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'),
+         NULL,
+         NULL
+         );
 
 
 -- TODO: (첫번째 : 유저id(시퀀스), 두번째 : 1(일반유저) 2(관리자) )
