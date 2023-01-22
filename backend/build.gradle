@@ -55,20 +55,20 @@ dependencies {
     //    테스트 모듈 라이브러리
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-//    TODO: 로그인 관련 라이브러리 추가 ( security, jjwt, validation )
-//    spring security 라이브러리
+    //    TODO: 로그인 관련 라이브러리 추가 ( security, jjwt, validation )
+    //    spring security 라이브러리
     implementation 'org.springframework.boot:spring-boot-starter-security'
-//    jwt 웹토큰 라이브러리
+    //    jwt 웹토큰 라이브러리
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
 
-//    validation(유효성) 라이브러리
+    //    validation(유효성) 라이브러리
     implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.7'
 
-//    TODO: spring security 테스트 라이브러리 추가
+    //    TODO: spring security 테스트 라이브러리 추가
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // todo:    OAUTH2 라이브러리 추가 : 소셜 로그인 , 구글로그인, 네이버로그인, 카카오로그인,
-//    위의 것들을 SSO(Single Sign On)
+    //    위의 것들을 SSO(Single Sign On)
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
