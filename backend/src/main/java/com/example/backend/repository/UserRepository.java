@@ -55,4 +55,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
             ,nativeQuery = true)
     Page<UserRoleDto> findAllByUsernameContaining(@Param("username") String username, Pageable pageable);
 
+    Page<User> findByEmail(String email, Pageable pageable);
 }
